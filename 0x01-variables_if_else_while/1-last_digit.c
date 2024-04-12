@@ -4,8 +4,9 @@
 
 /**
  * main - entry point
- * Description : print the last digit
- * Return : 0 (success)
+ * Description: Prints the last digit of the number stored in the variable n
+ *              and provides information about its magnitude.
+ * Return: Always returns 0 to indicate successful execution.
 */
 int main(void)
 {
