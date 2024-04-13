@@ -23,7 +23,7 @@ int main(void)
 				putchar((sDigit / 10) + 48);
 				putchar((sDigit % 10) + 48);
 
-				if (fDigit != 98 || sDigit != 98)
+				if (fDigit != 98 || sDigit != 99)
 				{
 					putchar(',');
 					putchar(' ');
