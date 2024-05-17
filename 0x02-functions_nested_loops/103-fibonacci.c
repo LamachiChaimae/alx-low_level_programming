@@ -9,8 +9,8 @@
 
 int main(void)
 {
-	int long fib1 = 0, fib2 = 1, sum;
-	int long total_sum;
+	long int fib1 = 0, fib2 = 1, sum;
+	long int total_sum;
 
 	while (1)
 	{
