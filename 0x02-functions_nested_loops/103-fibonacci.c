@@ -9,8 +9,8 @@
 
 int main(void)
 {
-	long  fib1 = 0, fib2 = 1, sum;
-	unsigned long int total_sum;
+	unsigned int fib1 = 0, fib2 = 1, sum;
+	float total_sum;
 
 	while (1)
 	{
@@ -23,6 +23,6 @@ int main(void)
 		fib1 = fib2;
 		fib2 = sum;
 	}
-	printf("%ul\n", total_sum);
+	printf("%.Of\n", total_sum);
 	return (0);
 }
