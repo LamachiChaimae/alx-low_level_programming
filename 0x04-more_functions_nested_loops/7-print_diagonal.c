@@ -1,24 +1,25 @@
 #include "main.h"
-
 /**
- * print_diagonal - print draws a diagonal line
- * @n : umber of times the character
+*print_diagonal - prints a diagonal
+*@n:parameter
+*Return:returns nothing
 */
-
 void print_diagonal(int n)
 {
-	int post, space;
+int len, space;
+if (n > 0)
+{
+for (len = 0; len < n; len++)
+{
+for (space = 0; space < len; space++)
+_putchar(' ');
 
-	if (n <= 0)
-		_putchar('\n');
-	else
-	{
-		for (post = 1; post <= n; post++)
-		{
-			for (space = 1; space <= post; space++)
-				_putchar(' ');
-			_putchar(92);
-			_putchar('\n');
-		}
-	}
+_putchar('\\');
+
+if (len == (n - 1))
+continue;
+_putchar('\n');
+}
+}
+_putchar('\n');
 }
