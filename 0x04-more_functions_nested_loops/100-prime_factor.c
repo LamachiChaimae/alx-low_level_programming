@@ -1,62 +1,66 @@
-#include<stdio.h>
+#include <stdio.h>
 
 /**
- * _sqrt - finds he square root
+ * _sqrt - finds the square root using the Babylonian method
  * @x: input number
  * Return: square root of x
 */
-
 double _sqrt(double x)
 {
-	float sqrt, tmp;
+    float sqrt, tmp;
 
-	sqrt = x / 2;
-	tmp = 0;
+    sqrt = x / 2;
+    tmp = 0;
 
-	while (sqrt != tmp)
-	{
-		tmp = sqrt;
-		sqrt = (x / tmp + tmp) / 2;
-	}
-	return (sqrt);
+    while (sqrt != tmp)
+    {
+        tmp = sqrt;
+        sqrt = (x / tmp + tmp) / 2;
+    }
+    return sqrt;
 }
 
 /**
- * largest_prime_factor - finds and print largest
- * prime factor of number (num)
- * @num: number to find
+ * largest_prime_factor - finds and prints the largest
+ * prime factor of the number (num)
+ * @num: number to find the largest prime factor of
 */
-
 void largest_prime_factor(long int num)
 {
-	int pruM, largest;
+    int prm, largest;
 
-	while (num % 2)
-		num = num / 2;
+    // Divide by 2 to remove all even factors
+    while (num % 2 == 0)
+    {
+        num = num / 2;
+        largest = 2;
+    }
 
-	for (pruM = 3; pruM <= _sqrt(num); pruM += 2)
-	{
-		while (num % pruM == 0)
-		{
-			num = num / pruM;
-			largest = pruM;
-		}
-	}
+    // Check for odd factors from 3 onwards
+    for (prm = 3; prm <= _sqrt(num); prm += 2)
+    {
+        while (num % prm == 0)
+        {
+            num = num / prm;
+            largest = prm;
+        }
+    }
 
-	if (num / 2)
-		largest = num;
-	printf("%d\n", largest);
+    // If num is a prime number greater than 2
+    if (num > 2)
+        largest = num;
+
+    printf("%d\n", largest);
 }
 
 /**
  * main - Entry point
  *
- * Return : Always 0 (Success)
+ * Return: Always 0 (Success)
 */
-
 int main(void)
 {
-	largest_prime_factor(612852475143);
+    largest_prime_factor(612852475143);
 
-	return 0;
+    return 0;
 }
