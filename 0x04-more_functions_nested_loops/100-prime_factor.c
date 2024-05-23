@@ -5,19 +5,20 @@
  * @x: input number
  * Return: square root of x
 */
+
 double _sqrt(double x)
 {
-    float sqrt, tmp;
+	float sqrt, tmp;
 
-    sqrt = x / 2;
-    tmp = 0;
+	sqrt = x / 2;
+	tmp = 0;
 
-    while (sqrt != tmp)
-    {
-        tmp = sqrt;
-        sqrt = (x / tmp + tmp) / 2;
-    }
-    return sqrt;
+	while (sqrt != tmp)
+	{
+		tmp = sqrt;
+		sqrt = (x / tmp + tmp) / 2;
+	}
+	return (sqrt);
 }
 
 /**
@@ -25,32 +26,30 @@ double _sqrt(double x)
  * prime factor of the number (num)
  * @num: number to find the largest prime factor of
 */
+
 void largest_prime_factor(long int num)
 {
-    int prm, largest;
+	int prm, largest;
 
-    // Divide by 2 to remove all even factors
-    while (num % 2 == 0)
-    {
-        num = num / 2;
-        largest = 2;
-    }
+	while (num % 2 == 0)
+	{
+		num = num / 2;
+		largest = 2;
+	}
 
-    // Check for odd factors from 3 onwards
-    for (prm = 3; prm <= _sqrt(num); prm += 2)
-    {
-        while (num % prm == 0)
-        {
-            num = num / prm;
-            largest = prm;
-        }
-    }
+	for (prm = 3; prm <= _sqrt(num); prm += 2)
+	{
+		while (num % prm == 0)
+		{
+			num = num / prm;
+			largest = prm;
+		}
+	}
 
-    // If num is a prime number greater than 2
-    if (num > 2)
-        largest = num;
+	if (num > 2)
+		largest = num;
 
-    printf("%d\n", largest);
+	printf("%d\n", largest);
 }
 
 /**
@@ -60,7 +59,6 @@ void largest_prime_factor(long int num)
 */
 int main(void)
 {
-    largest_prime_factor(612852475143);
-
-    return 0;
+	largest_prime_factor(612852475143);
+	return (0);
 }
